@@ -59,6 +59,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\ConnectionService.cs" />
     <Compile Include="Views\Windows\WindowMain.xaml.cs">
       <DependentUpon>WindowMain.xaml</DependentUpon>
     </Compile>
