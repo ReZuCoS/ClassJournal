@@ -7,10 +7,8 @@
         mc:Ignorable="d"
         Title="Главная форма"
         Icon="{StaticResource appLogo}"
-        Height="600"
-        Width="1065"
-        MinHeight="600"
-        MinWidth="1065"
+        Height="600" Width="1065"
+        MinHeight="600" MinWidth="1065"
         Background="{StaticResource mainBackBrush}"
         WindowStartupLocation="CenterScreen">
     <Grid>
