@@ -85,11 +85,101 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-Black.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-BlackIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-Bold.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-BoldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-Extrabld.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-ExtrabldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-Light.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-LightIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-Regular.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-RegularIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-Semibold.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-SemiboldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNova-ThinIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Black.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-BlackIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Bold.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-BoldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Extrabld.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-ExtrabldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Light.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-LightIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Regular.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-RegularIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Semibold.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-SemiboldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-Thin.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaCond-ThinIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Black.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-BlackIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Bold.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-BoldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Extrabld.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-ExtrabldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Light.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-LightIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Regular.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-RegularIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Semibold.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-SemiboldIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-Thin.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaExCn-ThinIt.ttf" />
+    <Resource Include="Resources\Fonts\ProximaNova\ProximaNovaT-Thin.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Resources\Dictionaries\Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Images.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Styles\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Styles\ImageStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Styles\LabelStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Styles\PasswordBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Styles\TextBlocks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Styles\TextBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Templates\DataTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Dictionaries\Templates\ToggleButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Fonts\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Windows\WindowMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -97,8 +187,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Resources\" />
     <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\CheckMark.png" />
+    <Resource Include="Resources\Images\EmptyPhoto.png" />
+    <Resource Include="Resources\Images\Logo.png" />
+    <Resource Include="Resources\Images\WideLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

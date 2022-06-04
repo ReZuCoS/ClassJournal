@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Кисти приложения -->
+    <SolidColorBrush x:Key="foreBrush" Color="{StaticResource foreColor}"/>
+    <SolidColorBrush x:Key="borderBrush" Color="{StaticResource borderColor}"/>
+    <SolidColorBrush x:Key="addBackBrush" Color="{StaticResource addBackColor}"/>
+    <SolidColorBrush x:Key="mainBackBrush" Color="{StaticResource mainBackColor}"/>
+    <SolidColorBrush x:Key="unactiveBrush" Color="{StaticResource unactiveColor}"/>
+    <SolidColorBrush x:Key="foreSelectionBrush" Color="{StaticResource foreSelectionColor}"/>
+    <SolidColorBrush x:Key="successConnectionBrush" Color="{StaticResource successConnectionColor}"/>
+    <SolidColorBrush x:Key="failedConnectionBrush" Color="{StaticResource failedConnectionColor}"/>
+</ResourceDictionary>

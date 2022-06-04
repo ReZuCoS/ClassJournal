@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Стандартный label -->
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource defaultFont}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Foreground" Value="{StaticResource foreBrush}"/>
+    </Style>
+    <!-- Стиль заголовка окна -->
+    <Style x:Key="defaultWindowHeaderLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource defaultFont}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource foreBrush}"/>
+    </Style>
+    <!-- Заголовок раздела -->
+    <Style x:Key="headerLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="{StaticResource defaultFont}"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontSize" Value="28"/>
+        <Setter Property="Foreground" Value="{StaticResource foreBrush}"/>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,33 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Логотип приложения -->
+    <BitmapImage x:Key="appLogo">
+        <BitmapImage.UriSource>
+            /Assets/Images/Logo.png
+        </BitmapImage.UriSource>
+    </BitmapImage>
+
+    <!-- Широкий логотип приложения -->
+    <BitmapImage x:Key="appWideLogo">
+        <BitmapImage.UriSource>
+            /Assets/Images/WideLogo.png
+        </BitmapImage.UriSource>
+    </BitmapImage>
+
+    <!-- Галочка кнопки переключения -->
+    <BitmapImage x:Key="checkMark">
+        <BitmapImage.UriSource>
+            /Assets/Images/CheckMark.png
+        </BitmapImage.UriSource>
+    </BitmapImage>
+
+    <!-- Фото по-умолчанию для сотрудников -->
+    <BitmapImage x:Key="emptyPhoto">
+        <BitmapImage.UriSource>
+            /Assets/Images/EmptyPhoto.png
+        </BitmapImage.UriSource>
+    </BitmapImage>
+
+</ResourceDictionary>

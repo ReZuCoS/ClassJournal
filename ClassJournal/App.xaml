@@ -4,6 +4,20 @@
              xmlns:local="clr-namespace:ClassJournal"
              StartupUri="\Views\Windows\WindowMain.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="\Assets\Fonts\Fonts.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Images.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Colors.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Brushes.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Styles\Buttons.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Styles\TextBoxes.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Styles\ImageStyles.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Styles\LabelStyles.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Styles\PasswordBoxes.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Templates\ToggleButtons.xaml"/>
+                <ResourceDictionary Source="\Assets\Dictionaries\Templates\DataTemplates.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

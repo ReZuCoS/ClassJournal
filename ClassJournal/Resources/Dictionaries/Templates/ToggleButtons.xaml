@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Стандартный стиль кнопки переключения -->
+    <ControlTemplate TargetType="{x:Type ToggleButton}" x:Key="defaultToggleButton">
+        <Grid>
+            <Border Height="{TemplateBinding Height}"
+                Width="{TemplateBinding Height}"
+                CornerRadius="2"
+                BorderThickness="2"
+                Background="Transparent">
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="BorderBrush" Value="{StaticResource unactiveBrush}"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="{StaticResource foreSelectionBrush}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+
+                <Image>
+                    <Image.Style>
+                        <Style>
+                            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding IsChecked,
+                                                RelativeSource={RelativeSource
+                                                AncestorType={x:Type ToggleButton}}}" Value="True">
+                                    <Setter Property="Image.Source" Value="{StaticResource checkMark}"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </Border>
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

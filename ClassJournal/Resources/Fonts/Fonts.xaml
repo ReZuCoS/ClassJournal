@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Шрифт приложения -->
+    <FontFamily x:Key="defaultFont">
+        /Assets/Fonts/ProximaNova/#Proxima Nova
+    </FontFamily>
+
+</ResourceDictionary>
