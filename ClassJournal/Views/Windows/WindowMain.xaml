@@ -5,8 +5,124 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassJournal.Views.Windows"
         mc:Ignorable="d"
-        Title="WindowMain" Height="450" Width="800">
+        Title="Главная форма"
+        Icon="{StaticResource appLogo}"
+        Height="600"
+        Width="1065"
+        MinHeight="600"
+        MinWidth="1065"
+        Background="{StaticResource mainBackBrush}"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="{StaticResource addBackBrush}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Background="#FFADC9F8">
+                <Image Margin="1" Height="65" Width="auto" Source="{StaticResource appWideLogo}"/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <ListView Name="listViewTables" Background="{StaticResource addBackBrush}"
+                          ScrollViewer.CanContentScroll="False"
+                          BorderBrush="Transparent">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Style="{StaticResource headerLabel}" Content="{Binding}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="2">
+                <StackPanel Grid.Column="0"
+                            Grid.Row="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Bottom">
+
+                    <Ellipse StrokeThickness="2"
+                            Name="ellipseConnectionStatus"
+                            Width="24"
+                            Height="24"
+                            Margin="5,0,0,2"
+                            Fill="{StaticResource failedConnectionBrush}"
+                            Stroke="{StaticResource foreBrush}"/>
+
+                    <Label Style="{StaticResource defaultWindowHeaderLabel}"
+                           Content="Статус подключения"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <ListView x:Name="listViewMain"
+                          Background="{StaticResource mainBackBrush}"
+                          ScrollViewer.CanContentScroll="False"
+                          HorizontalContentAlignment="Stretch">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                        <ContentPresenter />
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
+
+            <Grid Grid.Row="1" Background="{StaticResource addBackBrush}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0"
+                        Margin="5"
+                        Width="150"
+                        Content="Добавить"
+                        Name="addButton"
+                        Visibility="Hidden"/>
+
+                <Button Grid.Column="1"
+                        Margin="5"
+                        Width="150"
+                        Content="Пред."
+                        Name="subtractWeek"
+                        Visibility="Hidden"/>
+
+                <Button Grid.Column="2"
+                        Margin="5"
+                        Width="150"
+                        Content="След."
+                        Name="addWeek"
+                        Visibility="Hidden"/>
+
+                <Button Grid.Column="3"
+                        Width="150"
+                        Margin="5"
+                        Content="Выйти"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

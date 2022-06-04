@@ -5,28 +5,28 @@
     <!-- Логотип приложения -->
     <BitmapImage x:Key="appLogo">
         <BitmapImage.UriSource>
-            /Assets/Images/Logo.png
+            \Resources\Images\Logo.png
         </BitmapImage.UriSource>
     </BitmapImage>
 
     <!-- Широкий логотип приложения -->
     <BitmapImage x:Key="appWideLogo">
         <BitmapImage.UriSource>
-            /Assets/Images/WideLogo.png
+            \Resources\Images\WideLogo.png
         </BitmapImage.UriSource>
     </BitmapImage>
 
     <!-- Галочка кнопки переключения -->
     <BitmapImage x:Key="checkMark">
         <BitmapImage.UriSource>
-            /Assets/Images/CheckMark.png
+            \Resources\Images\CheckMark.png
         </BitmapImage.UriSource>
     </BitmapImage>
 
     <!-- Фото по-умолчанию для сотрудников -->
     <BitmapImage x:Key="emptyPhoto">
         <BitmapImage.UriSource>
-            /Assets/Images/EmptyPhoto.png
+            \Resources\Images\EmptyPhoto.png
         </BitmapImage.UriSource>
     </BitmapImage>
 

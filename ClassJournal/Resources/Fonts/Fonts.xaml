@@ -3,7 +3,7 @@
 
     <!-- Шрифт приложения -->
     <FontFamily x:Key="defaultFont">
-        /Assets/Fonts/ProximaNova/#Proxima Nova
+        \Resources\Fonts\ProximaNova\#Proxima Nova
     </FontFamily>
 
 </ResourceDictionary>
