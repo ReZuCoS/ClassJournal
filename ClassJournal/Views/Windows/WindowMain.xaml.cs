@@ -28,7 +28,6 @@ namespace ClassJournal.Views.Windows
             else
                 Application.Current.Shutdown();
 
-
         }
 
         private async void CheckConnectionServiceStatus()

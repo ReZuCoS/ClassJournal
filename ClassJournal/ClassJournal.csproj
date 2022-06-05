@@ -87,8 +87,15 @@
     <Compile Include="ViewModels\ImageConverter.cs" />
     <Compile Include="ViewModels\StringValidator.cs" />
     <Compile Include="ViewModels\TextBoxValidator.cs" />
+    <Compile Include="Views\EntityEditors\PageEntity.cs" />
+    <Compile Include="Views\EntityEditors\PageUserEntity.xaml.cs">
+      <DependentUpon>PageUserEntity.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Windows\WindowCode.xaml.cs">
       <DependentUpon>WindowCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\WindowEntityEditor.xaml.cs">
+      <DependentUpon>WindowEntityEditor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Windows\WindowLogin.xaml.cs">
       <DependentUpon>WindowLogin.xaml</DependentUpon>
@@ -215,7 +222,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\EntityEditors\PageUserEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Windows\WindowCode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\WindowEntityEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

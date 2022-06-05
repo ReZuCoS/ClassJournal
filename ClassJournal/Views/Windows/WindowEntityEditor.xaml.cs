@@ -1,59 +1,44 @@
-﻿using System;
+﻿using ClassJournal.Views.EntityEditors;
 using System.Windows;
-using System.Threading.Tasks;
-using System.Windows.Media;
 using System.Threading;
-using ClassJournal.Models;
-using ClassJournal.Views.EntityEditors;
+using System.Windows.Media;
+using System.Threading.Tasks;
 
 namespace ClassJournal.Views.Windows
 {
-    public partial class WindowLogin : Window
+    public partial class WindowEntityEditor : Window
     {
-        public WindowLogin()
+        private readonly PageEntity _currentEntityPage = null;
+
+        public WindowEntityEditor(PageEntity page)
         {
             InitializeComponent();
-            CheckConnectionServiceStatus();
+            CheckServiceStatus();
+            this.Title = page.Title;
+            _currentEntityPage = page;
+            frameMain.Content = _currentEntityPage;
         }
 
-        private void OpenCodeInsertWindow(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
-            if (!App.ConnectionService.IsConnected)
+            this.DialogResult = false;
+        }
+
+        private void SaveChanges(object sender, RoutedEventArgs e)
+        {
+            if(!App.ConnectionService.IsConnected)
             {
                 App.ShowErrorMessage("Проверьте подключение к сети!");
                 return;
             }
 
-            WindowCode window = new WindowCode();
-            window.ShowDialog();
-
-            if (window.DialogResult == true)
+            if(_currentEntityPage.EntitySaved())
             {
-                OpenWindowUserEntity(window.User);
-            }
+                this.DialogResult = true;
+            }    
         }
 
-        private void OpenWindowUserEntity(User user)
-        {
-            this.Hide();
-
-            PageUserEntity page = new PageUserEntity(user);
-
-            WindowEntityEditor windowNewUser = new WindowEntityEditor(page);
-            windowNewUser.ShowDialog();
-
-            this.ShowDialog();
-        }
-
-        private void PasswordInputHandler(object sender, RoutedEventArgs e)
-        {
-            if (txtboxPassword.Password.Length > 0)
-                watermarkPassword.Visibility = Visibility.Collapsed;
-            else
-                watermarkPassword.Visibility = Visibility.Visible;
-        }
-
-        private async void CheckConnectionServiceStatus()
+        private async void CheckServiceStatus()
         {
             await Task.Run(() =>
             {
