@@ -15,6 +15,8 @@ namespace ClassJournal.Views.Windows
             InitializeComponent();
             CheckServiceStatus();
             this.Title = page.Title;
+            this.MinHeight = page.MinHeight + 100;
+            this.MinWidth = page.MinWidth + 100;
             _currentEntityPage = page;
             frameMain.Content = _currentEntityPage;
         }

@@ -116,7 +116,8 @@
 
                 <Grid>
                     <Button Margin="10"
-                            Content="Вход"/>
+                            Content="Вход"
+                            Click="Login"/>
                 </Grid>
 
                 <Grid>

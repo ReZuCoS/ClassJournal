@@ -20,6 +20,7 @@
         <Grid Grid.Column="0" Background="{StaticResource addBackBrush}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
@@ -29,9 +30,17 @@
             </Grid>
 
             <Grid Grid.Row="1">
+                <StackPanel Name="stackPanelRole" HorizontalAlignment="Center" Margin="5" Width="250">
+                    <Label Style="{StaticResource headerLabel}" Margin="-5" Content="Роль:" HorizontalAlignment="Center"/>
+                    <ComboBox Name="cboxRoles" IsEnabled="True" Width="auto" SelectionChanged="UpdateTableList"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2">
                 <ListView Name="listViewTables" Background="{StaticResource addBackBrush}"
                           ScrollViewer.CanContentScroll="False"
-                          BorderBrush="Transparent">
+                          BorderBrush="Transparent"
+                          SelectionChanged="UpdateMainList">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <Label Style="{StaticResource headerLabel}" Content="{Binding}"/>
@@ -40,7 +49,7 @@
                 </ListView>
             </Grid>
 
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="3">
                 <StackPanel Grid.Column="0"
                             Grid.Row="1"
                             Orientation="Horizontal"
@@ -119,7 +128,7 @@
                 <Button Grid.Column="3"
                         Width="150"
                         Margin="5"
-                        Content="Выйти"/>
+                        Content="Выйти" Click="CloseApp"/>
             </Grid>
         </Grid>
     </Grid>

@@ -190,5 +190,21 @@ namespace ClassJournal.Views.EntityEditors
         {
             return users.Exists(user => user.Email == txtboxEmail.Text);
         }
+
+        private void PasswordInputHandler(object sender, RoutedEventArgs e)
+        {
+            if (txtboxPassword.Password.Length > 0)
+                watermarkPassword.Visibility = Visibility.Collapsed;
+            else
+                watermarkPassword.Visibility = Visibility.Visible;
+        }
+
+        private void RepeatPasswordInputHandler(object sender, RoutedEventArgs e)
+        {
+            if (txtboxPassword.Password.Length > 0)
+                watermarkRepeatPassword.Visibility = Visibility.Collapsed;
+            else
+                watermarkRepeatPassword.Visibility = Visibility.Visible;
+        }
     }
 }
