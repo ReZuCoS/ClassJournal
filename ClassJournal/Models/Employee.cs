@@ -12,7 +12,6 @@ namespace ClassJournal.Models
         public Employee()
         {
             Teachers = new HashSet<Teacher>();
-            Groups = new HashSet<Group>();
             Positions = new HashSet<Position>();
         }
 
@@ -45,16 +44,22 @@ namespace ClassJournal.Models
         [StringLength(12)]
         public string INN { get; set; }
 
+        [Required]
+        [StringLength(20)]
+        public string Phone { get; set; }
+
         [StringLength(500)]
         public string Comment { get; set; }
+
+        [StringLength(5)]
+        public string GroupID { get; set; }
+
+        public virtual Group Group { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Teacher> Teachers { get; set; }
 
         public virtual User User { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Group> Groups { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Position> Positions { get; set; }

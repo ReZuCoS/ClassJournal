@@ -42,11 +42,6 @@ namespace ClassJournal.Models
                 .WithRequired(e => e.Employee);
 
             modelBuilder.Entity<Employee>()
-                .HasMany(e => e.Groups)
-                .WithMany(e => e.Employees)
-                .Map(m => m.ToTable("Courators").MapLeftKey("EmployeeID").MapRightKey("GroupID"));
-
-            modelBuilder.Entity<Employee>()
                 .HasMany(e => e.Positions)
                 .WithMany(e => e.Employees)
                 .Map(m => m.ToTable("EmployeePositions").MapLeftKey("EmployeeID").MapRightKey("PositionID"));

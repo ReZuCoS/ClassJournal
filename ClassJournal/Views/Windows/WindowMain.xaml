@@ -109,6 +109,7 @@
                         Width="150"
                         Content="Добавить"
                         Name="addButton"
+                        Click="AddEntity"
                         Visibility="Hidden"/>
 
                 <Button Grid.Column="1"

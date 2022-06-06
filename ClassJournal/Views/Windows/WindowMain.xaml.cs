@@ -1,5 +1,7 @@
 ﻿using ClassJournal.Models;
 using ClassJournal.ViewModels;
+using ClassJournal.Views.EntityCards;
+using ClassJournal.Views.EntityEditors;
 using System;
 using System.IO;
 using System.Linq;
@@ -184,6 +186,8 @@ namespace ClassJournal.Views.Windows
         private void UpdateTableList(object sender, SelectionChangedEventArgs e)
         {
             _userPosition = cboxRoles.SelectedItem.ToString();
+            listViewMain.ItemsSource = null;
+            listViewTables.SelectedItem = null;
             listViewTables.ItemsSource = SetTableList(_userPosition);
         }
 
@@ -240,7 +244,29 @@ namespace ClassJournal.Views.Windows
 
         private void SetTableContext(List<Teacher> teachers)
         {
-            //throw new NotImplementedException();
+            listViewMain.ItemTemplate = (DataTemplate)Application.Current.Resources["teacherTemplate"];
+
+            if (_userPosition == "Завуч")
+            {
+                listViewMain.ItemsSource = teachers;
+                return;
+            }
+
+            if (_userPosition == "Классный руководитель" && _contextTableName == "Преподаватели")
+            {
+                teachers.Clear();
+
+                foreach(Lesson lesson in DatabaseContext.Database.Lessons.ToList())
+                {
+                    if(lesson.GroupID == _user.Employee.GroupID)
+                    {
+                        teachers.Add(lesson.Teacher);
+                    }
+                }
+
+                listViewMain.ItemsSource = teachers;
+                return;
+            }
         }
 
         private void SetTableContext(List<Subject> subjects)
@@ -270,7 +296,9 @@ namespace ClassJournal.Views.Windows
 
         private void SetTableContext(List<Employee> employees)
         {
-            //throw new NotImplementedException();
+            listViewMain.ItemTemplate = (DataTemplate)Application.Current.Resources["employeeTemplate"];
+
+            listViewMain.ItemsSource = employees;
         }
 
         private void EnableButtons()
@@ -295,9 +323,48 @@ namespace ClassJournal.Views.Windows
             }
         }
 
+        private void AddEntity(object sender, RoutedEventArgs e)
+        {
+            switch (_contextTableName)
+            {
+                case "Сотрудники":
+                    OpenEntityEditor(new PageEmployeeEntity());
+                    break;
+            }
+        }
+
         private void ExitUser()
         {
-            throw new NotImplementedException();
+            addButton.Visibility = Visibility.Hidden;
+            subtractWeek.Visibility = Visibility.Hidden;
+            addWeek.Visibility = Visibility.Hidden;
+            listViewMain.ItemsSource = null;
+
+            MessageBoxResult result = MessageBox.Show("Вы действительно хотите выйти из аккаунта?",
+                "Подтвердите действие", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.No)
+                return;
+
+            this.Hide();
+
+            this._user = null;
+            RemoveToken();
+
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
+            Application.Current.Shutdown();
+        }
+
+        private void RemoveToken()
+        {
+            if (TokenExists(_tokenPath))
+                File.Delete(_tokenPath);
+        }
+
+        private void OpenEntityEditor(PageEntity page)
+        {
+            WindowEntityEditor window = new WindowEntityEditor(page);
+            window.ShowDialog();
         }
     }
 }

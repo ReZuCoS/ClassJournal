@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="\Resources\Dictionaries\Styles\Buttons.xaml"/>
                 <ResourceDictionary Source="\Resources\Dictionaries\Styles\TextBoxes.xaml"/>
                 <ResourceDictionary Source="\Resources\Dictionaries\Styles\ComboBoxes.xaml"/>
+                <ResourceDictionary Source="\Resources\Dictionaries\Styles\DatePickers.xaml"/>
                 <ResourceDictionary Source="\Resources\Dictionaries\Styles\ImageStyles.xaml"/>
                 <ResourceDictionary Source="\Resources\Dictionaries\Styles\LabelStyles.xaml"/>
                 <ResourceDictionary Source="\Resources\Dictionaries\Styles\PasswordBoxes.xaml"/>

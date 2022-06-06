@@ -88,6 +88,15 @@
     <Compile Include="ViewModels\ImageConverter.cs" />
     <Compile Include="ViewModels\StringValidator.cs" />
     <Compile Include="ViewModels\TextBoxValidator.cs" />
+    <Compile Include="Views\EntityCards\CardEmployee.xaml.cs">
+      <DependentUpon>CardEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardTeacher.xaml.cs">
+      <DependentUpon>CardTeacher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageEmployeeEntity.xaml.cs">
+      <DependentUpon>PageEmployeeEntity.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EntityEditors\PageEntity.cs" />
     <Compile Include="Views\EntityEditors\PageUserEntity.xaml.cs">
       <DependentUpon>PageUserEntity.xaml</DependentUpon>
@@ -195,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\Dictionaries\Styles\DatePickers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Dictionaries\Styles\ImageStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -227,6 +240,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\EntityCards\CardEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardTeacher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageEmployeeEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EntityEditors\PageUserEntity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -248,9 +273,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\EntityCards\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\CheckMark.png" />
     <Resource Include="Resources\Images\EmptyPhoto.png" />

@@ -11,9 +11,9 @@ namespace ClassJournal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Group()
         {
+            Employees = new HashSet<Employee>();
             Lessons = new HashSet<Lesson>();
             Students = new HashSet<Student>();
-            Employees = new HashSet<Employee>();
         }
 
         [StringLength(5)]
@@ -27,6 +27,9 @@ namespace ClassJournal.Models
         [StringLength(20)]
         public string SpecialityCode { get; set; }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee> Employees { get; set; }
+
         public virtual Speciality Speciality { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -34,8 +37,5 @@ namespace ClassJournal.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
     }
 }
