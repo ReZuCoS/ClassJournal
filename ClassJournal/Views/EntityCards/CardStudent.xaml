@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ClassJournal.Views.EntityCards.CardTeacher"
+﻿<UserControl x:Class="ClassJournal.Views.EntityCards.CardStudent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -33,7 +33,7 @@
                     BorderThickness="2"
                     BorderBrush="{StaticResource borderBrush}"
                     CornerRadius="5">
-                <Image Source="{Binding Employee.Image}" Height="140"/>
+                <Image Source="{Binding Image}" Height="140"/>
             </Border>
 
             <Grid Grid.Column="1">
@@ -51,49 +51,45 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Style="{StaticResource headerLabel}">
-                            <Label.Content>
-                                <TextBlock>
-                                    <TextBlock.Text>
-                                        <MultiBinding StringFormat="{}{0} {1} {2}">
-                                            <Binding Path="Employee.Surname"/>
-                                            <Binding Path="Employee.Name"/>
-                                            <Binding Path="Employee.Patronymic"/>
-                                        </MultiBinding>
-                                    </TextBlock.Text>
-                                </TextBlock>
-                            </Label.Content>
-                        </Label>
+                        <Label Grid.Row="0"
+                               Content="{Binding GroupID}"
+                               Style="{StaticResource headerLabel}"/>
+
+                        <Label Grid.Row="0" Content="|" Style="{StaticResource headerLabel}"/>
+
+                        <Label Grid.Row="0" Content="{Binding Surname}"
+                               Style="{StaticResource headerLabel}"/>
+
+                        <Label Grid.Row="0" Content="{Binding Name}"
+                               Style="{StaticResource headerLabel}"/>
+
+                        <Label Grid.Row="0" Content="{Binding Patronymic}"
+                               Style="{StaticResource headerLabel}"/>
                     </StackPanel>
-                    
+
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Label Grid.Row="2"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="Предмет: "/>
-
-                        <Label Grid.Row="2"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="{Binding Subject.Title}"/>
-                    </StackPanel>
-
-                    <StackPanel Grid.Row="2" Orientation="Horizontal">
                         <Label Grid.Row="1"
                                FontStyle="Italic"
                                Foreground="{StaticResource foreSelectionBrush}"
-                               Content="Телефон: "/>
+                               Content="Студенческий билет №"/>
 
                         <Label Grid.Row="1"
                                FontStyle="Italic"
                                Foreground="{StaticResource foreSelectionBrush}"
-                               Content="{Binding Employee.Phone}"/>
+                               Content="{Binding StudentTicketID}"/>
                     </StackPanel>
-                    
-                    <Label Grid.Row="3"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="{Binding Employee.User.Email}"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Label Grid.Row="2"
+                           FontStyle="Italic"
+                           Foreground="{StaticResource foreSelectionBrush}"
+                           Content="{Binding Phone}"/>
+
+                        <Label Grid.Row="2"
+                           FontStyle="Italic"
+                           Foreground="{StaticResource foreSelectionBrush}"
+                           Content="{Binding Email}"/>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Grid>

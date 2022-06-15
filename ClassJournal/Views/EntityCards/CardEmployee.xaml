@@ -50,56 +50,33 @@
                     </Grid.RowDefinitions>
 
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Content="{Binding Surname}" Style="{StaticResource headerLabel}"/>
-
-                        <Label Grid.Row="0" Content="{Binding Name}" Style="{StaticResource headerLabel}"/>
-
-                        <Label Grid.Row="0" Content="{Binding Patronymic}" Style="{StaticResource headerLabel}"/>
+                        <Label Grid.Row="0" Style="{StaticResource headerLabel}">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                                            <Binding Path="Surname"/>
+                                            <Binding Path="Name"/>
+                                            <Binding Path="Patronymic"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
                     </StackPanel>
-
                     <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Label Grid.Row="2"
-                               FontStyle="Italic"
+                        <Label FontStyle="Italic"
                                Foreground="{StaticResource foreSelectionBrush}"
                                Content="Телефон: "/>
 
-                        <Label Grid.Row="2"
-                               FontStyle="Italic"
+                        <Label FontStyle="Italic"
                                Foreground="{StaticResource foreSelectionBrush}"
                                Content="{Binding Phone}"/>
                     </StackPanel>
-
-                    <StackPanel Grid.Row="2" Orientation="Horizontal">
-                        <Label Grid.Row="1"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="Дата рождения:"/>
-
-                        <Label Grid.Row="1"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="{Binding Bithday.Day}"/>
-                        
-                        <Label Grid.Row="1"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="/"/>
-                        
-                        <Label Grid.Row="1"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="{Binding Bithday.Month}"/>
-                        
-                        <Label Grid.Row="1"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="/"/>
-
-                        <Label Grid.Row="1"
-                               FontStyle="Italic"
-                               Foreground="{StaticResource foreSelectionBrush}"
-                               Content="{Binding Bithday.Year}"/>
-                    </StackPanel>
+                    <Label Grid.Row="2"
+                           FontStyle="Italic"
+                           Foreground="{StaticResource foreSelectionBrush}"
+                           Content="{Binding User.Email}"/>
                 </Grid>
             </Grid>
         </Grid>

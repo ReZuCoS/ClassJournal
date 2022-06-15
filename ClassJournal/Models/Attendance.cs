@@ -19,7 +19,7 @@ namespace ClassJournal.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int StudentID { get; set; }
 
-        public int? IsVisited { get; set; }
+        public bool? IsVisited { get; set; }
 
         [StringLength(1)]
         public string Mark { get; set; }

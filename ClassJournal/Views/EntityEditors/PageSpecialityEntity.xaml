@@ -1,0 +1,103 @@
+﻿<local:PageEntity x:Class="ClassJournal.Views.EntityEditors.PageSpecialityEntity"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                  xmlns:local="clr-namespace:ClassJournal.Views.EntityEditors"
+                  mc:Ignorable="d"
+                  MinHeight="200" MinWidth="400">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <Grid>
+                <TextBox MinWidth="150"
+                         Name="txtboxCode"
+                         Tag="Код специальности"
+                         MaxWidth="500"
+                         MaxLength="20"
+                         Width="300"
+                         Margin="10"/>
+
+                <TextBlock Text="Код специальности"
+                           FontSize="26"
+                           IsHitTestVisible="False"
+                           Foreground="{StaticResource unactiveBrush}"
+                           FontFamily="{StaticResource defaultFont}"
+                           FontWeight="SemiBold"
+                           Margin="0 0 62 0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=txtboxCode}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+            <Grid>
+                <TextBox MinWidth="150"
+                         Name="txtboxTitle"
+                         Tag="Наименование"
+                         MaxWidth="500"
+                         MaxLength="300"
+                         Width="300"
+                         Margin="10"/>
+
+                <TextBlock Text="Наименование"
+                           FontSize="26"
+                           IsHitTestVisible="False"
+                           Foreground="{StaticResource unactiveBrush}"
+                           FontFamily="{StaticResource defaultFont}"
+                           FontWeight="SemiBold"
+                           Margin="0 0 115 0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=txtboxTitle}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+            <Grid>
+                <TextBox MinWidth="150"
+                         Name="txtboxAbbreviation"
+                         Tag="Аббревиатура"
+                         MaxWidth="500"
+                         MaxLength="5"
+                         Width="300"
+                         Margin="10"/>
+
+                <TextBlock Text="Аббревиатура"
+                           FontSize="26"
+                           IsHitTestVisible="False"
+                           Foreground="{StaticResource unactiveBrush}"
+                           FontFamily="{StaticResource defaultFont}"
+                           FontWeight="SemiBold"
+                           Margin="0 0 120 0"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">
+                    <TextBlock.Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Text, ElementName=txtboxAbbreviation}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</local:PageEntity>

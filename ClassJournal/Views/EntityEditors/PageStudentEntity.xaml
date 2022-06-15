@@ -1,11 +1,11 @@
-﻿<local:PageEntity x:Class="ClassJournal.Views.EntityEditors.PageEmployeeEntity"
+﻿<local:PageEntity x:Class="ClassJournal.Views.EntityEditors.PageStudentEntity"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ClassJournal.Views.EntityEditors"
       mc:Ignorable="d" 
-      MinHeight="525" MinWidth="650">
+      MinHeight="600" MinWidth="650">
     <Grid>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -22,13 +22,12 @@
                             BorderBrush="{StaticResource borderBrush}"
                             CornerRadius="5">
                         <Image Source="{StaticResource emptyPhoto}"
-                               Name="employeePhoto"/>
+                               Name="studentPhoto"/>
                     </Border>
 
                     <Button Content="Изменить"
                             Width="200"
-                            Height="36"
-                            Click="ChangeImage"/>
+                            Height="36" Click="ChangeImage"/>
                 </StackPanel>
             </Grid>
 
@@ -128,87 +127,56 @@
                     </Grid>
 
                     <Grid>
-                        <TextBox MinWidth="150"
-                                 Name="txtboxPassport"
-                                 Tag="Паспорт"
-                                 MaxLength="10"
-                                 Width="300"
-                                 Margin="10"/>
+                        <ComboBox Name="cboxGroup"
+                          Width="300"
+                          Margin="10">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding GroupID}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Grid>
 
-                        <TextBlock Text="Паспорт"
+                    <StackPanel>
+                        <TextBlock Text="Дата зачисления:"
                                    FontSize="26"
                                    IsHitTestVisible="False"
                                    Foreground="{StaticResource unactiveBrush}"
                                    FontFamily="{StaticResource defaultFont}"
                                    FontWeight="SemiBold"
-                                   Margin="0 0 195 0"
+                                   Margin="0 0 80 0"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Text, ElementName=txtboxPassport}" Value="">
-                                            <Setter Property="Visibility" Value="Visible"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                    </Grid>
+                                   HorizontalAlignment="Center"/>
 
-                    <Grid>
-                        <TextBox MinWidth="150"
-                                 Tag="Адрес"
+                        <DatePicker Tag="Дата зачисления"
                                  Width="300"
-                                 MaxLength="300"
                                  Margin="10"
-                                 Name="txtboxAddress"/>
-
-                        <TextBlock Text="Адрес"
-                                   FontSize="26"
-                                   IsHitTestVisible="False"
-                                   Foreground="{StaticResource unactiveBrush}"
-                                   FontFamily="{StaticResource defaultFont}"
-                                   FontWeight="SemiBold"
-                                   Margin="0 0 220 0"
-                                   VerticalAlignment="Center"
-                                   HorizontalAlignment="Center">
-                            <TextBlock.Style>
-                                <Style TargetType="{x:Type TextBlock}">
-                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Text, ElementName=txtboxAddress}" Value="">
-                                            <Setter Property="Visibility" Value="Visible"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </TextBlock.Style>
-                        </TextBlock>
-                    </Grid>
+                                 Name="dateTimeEnrollment"/>
+                    </StackPanel>
 
                     <Grid>
                         <TextBox MinWidth="150"
                                  Tag="ИНН"
                                  Width="300"
-                                 MaxLength="12"
+                                 MaxLength="5"
                                  Margin="10"
-                                 Name="txtboxINN"/>
+                                 Name="txtboxStudentTicketID"/>
 
-                        <TextBlock Text="ИНН"
+                        <TextBlock Text="Номер билета"
                                    FontSize="26"
                                    IsHitTestVisible="False"
                                    Foreground="{StaticResource unactiveBrush}"
                                    FontFamily="{StaticResource defaultFont}"
                                    FontWeight="SemiBold"
-                                   Margin="0 0 240 0"
+                                   Margin="0 0 122 0"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center">
                             <TextBlock.Style>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="Visibility" Value="Collapsed"/>
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding Text, ElementName=txtboxINN}" Value="">
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtboxStudentTicketID}" Value="">
                                             <Setter Property="Visibility" Value="Visible"/>
                                         </DataTrigger>
                                     </Style.Triggers>
@@ -249,6 +217,36 @@
 
                     <Grid>
                         <TextBox MinWidth="150"
+                                 Tag="Адрес"
+                                 Width="300"
+                                 MaxLength="300"
+                                 Margin="10"
+                                 Name="txtboxAddress"/>
+
+                        <TextBlock Text="Адрес"
+                                   FontSize="26"
+                                   IsHitTestVisible="False"
+                                   Foreground="{StaticResource unactiveBrush}"
+                                   FontFamily="{StaticResource defaultFont}"
+                                   FontWeight="SemiBold"
+                                   Margin="0 0 220 0"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtboxAddress}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
+                    </Grid>
+
+                    <Grid x:Name="commentgrid" Visibility="Collapsed">
+                        <TextBox MinWidth="150"
                                  Tag="Комментарий"
                                  Width="300"
                                  MaxLength="500"
@@ -278,23 +276,33 @@
                     </Grid>
 
                     <Grid>
-                        <StackPanel>
-                            <TextBlock Text="Дата рождения:"
+                        <TextBox MinWidth="150"
+                                 Tag="E-mail"
+                                 Width="300"
+                                 MaxLength="50"
+                                 Margin="10"
+                                 Name="txtboxEmail"/>
+
+                        <TextBlock Text="E-mail"
                                    FontSize="26"
                                    IsHitTestVisible="False"
                                    Foreground="{StaticResource unactiveBrush}"
                                    FontFamily="{StaticResource defaultFont}"
                                    FontWeight="SemiBold"
-                                   Margin="0 0 105 0"
+                                   Margin="0 0 225 0"
                                    VerticalAlignment="Center"
-                                   HorizontalAlignment="Center"/>
-
-                            <DatePicker MinWidth="150"
-                                    Tag="Дата рождения"
-                                    Width="300"
-                                    Margin="5"
-                                    Name="dateTimeBithday"/>
-                        </StackPanel>
+                                   HorizontalAlignment="Center">
+                            <TextBlock.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Text, ElementName=txtboxEmail}" Value="">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                        </TextBlock>
                     </Grid>
                 </StackPanel>
             </Grid>

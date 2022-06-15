@@ -27,18 +27,18 @@ namespace ClassJournal.Services
                         tries = 0;
                     }
 
-                    if (IsConnected && tries < 3)
+                    if (IsConnected && tries < 5)
                     {
                         tries++;
                     }
 
-                    if (IsConnected && tries == 3)
+                    if (IsConnected && tries == 5)
                     {
-                        Task.Delay(5000);
+                        Task.Delay(3000);
                     }
                     else
                     {
-                        Task.Delay(1000);
+                        Task.Delay(500);
                     }
                 }
             });

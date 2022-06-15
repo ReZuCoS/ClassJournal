@@ -13,17 +13,17 @@ namespace ClassJournal.Views.EntityEditors
     public partial class PageUserEntity : PageEntity
     {
         private bool _imageChanged = false;
-        public User User { get; private set; }
+        private readonly User _user;
         
         public PageUserEntity(User user)
         {
             InitializeComponent();
-            User = user;
+             this._user = user;
 
-            txtboxSurname.Text = User.Employee.Surname;
-            txtboxName.Text = User.Employee.Name;
-            txtboxPatronymic.Text = User.Employee.Patronymic;
-            txtboxBithday.Text = User.Employee.Bithday.Value.Date.ToShortDateString();
+            txtboxSurname.Text = _user.Employee.Surname;
+            txtboxName.Text = _user.Employee.Name;
+            txtboxPatronymic.Text = _user.Employee.Patronymic;
+            txtboxBithday.Text = _user.Employee.Bithday.Value.Date.ToShortDateString();
         }
 
         private void ChangeImage(object sender, RoutedEventArgs e)
@@ -38,8 +38,8 @@ namespace ClassJournal.Views.EntityEditors
             try
             {
                 BitmapImage image = new BitmapImage(new Uri(fileName));
-                User.Employee.Image = DatabaseImageConverter.ToByteArray(image);
-                employeePhoto.Source = DatabaseImageConverter.ToBitmapImage(User.Employee.Image);
+                _user.Employee.Image = DatabaseImageConverter.ToByteArray(image);
+                employeePhoto.Source = DatabaseImageConverter.ToBitmapImage(_user.Employee.Image);
                 _imageChanged = true;
             }
             catch
@@ -147,16 +147,16 @@ namespace ClassJournal.Views.EntityEditors
 
         private void AppendUserInfo()
         {
-            User.Login = txtboxLogin.Text;
-            User.Password = HashGenerator.GetSHA256(txtboxPassword.Password);
-            User.Email = txtboxEmail.Text;
-            User.Token = $"{HashGenerator.GetSHA256(txtboxLogin.Text)}{HashGenerator.GetSHA256(txtboxPassword.Password)}";
+            _user.Login = txtboxLogin.Text;
+            _user.Password = HashGenerator.GetSHA256(txtboxPassword.Password);
+            _user.Email = txtboxEmail.Text;
+            _user.Token = $"{HashGenerator.GetSHA256(txtboxLogin.Text)}{HashGenerator.GetSHA256(txtboxPassword.Password)}";
 
             if (!_imageChanged)
             {
                 BitmapImage defaultImage = (BitmapImage)Application.Current.Resources["emptyPhoto"];
 
-                User.Employee.Image = DatabaseImageConverter.ToByteArray(defaultImage);
+                _user.Employee.Image = DatabaseImageConverter.ToByteArray(defaultImage);
             }
         }
 
@@ -169,7 +169,7 @@ namespace ClassJournal.Views.EntityEditors
                 App.ShowErrorMessage("Пользователь с таким логином уже существует!\nВведите другой логин");
                 return true;
             }
-
+            
             bool emailExists = IsEmailExists(DatabaseContext.Database.Users.ToList());
 
             if (emailExists)
@@ -205,6 +205,11 @@ namespace ClassJournal.Views.EntityEditors
                 watermarkRepeatPassword.Visibility = Visibility.Collapsed;
             else
                 watermarkRepeatPassword.Visibility = Visibility.Visible;
+        }
+
+        public override bool EntityRemoved()
+        {
+            return false;
         }
     }
 }

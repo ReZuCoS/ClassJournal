@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="ClassJournal.Views.EntityCards.CardLesson"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ClassJournal.Views.EntityCards"
+             mc:Ignorable="d"
+             Margin="5">
+    <Border BorderThickness="2"
+            CornerRadius="5"
+            Background="{StaticResource mainBackBrush}">
+        <Border.Style>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="BorderBrush" Value="{StaticResource unactiveBrush}"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="BorderBrush" Value="{StaticResource foreSelectionBrush}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+        
+        <StackPanel Orientation="Vertical" HorizontalAlignment="{Binding}">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Урок:"/>
+                <Label Content="{Binding Teacher.Subject.Title}"/>
+                <Label Content="|"/>
+                <Label Content="Преподаватель:"/>
+                <Label Content="{Binding Teacher.Employee.Surname}"/>
+                <Label Content="{Binding Teacher.Employee.Name}"/>
+                <Label Content="{Binding Teacher.Employee.Patronymic}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Группа:"/>
+                <Label Content="{Binding Group.GroupID}"/>
+
+                <Label Content="|"/>
+
+                <Label Content="Номер кабинета:"/>
+                <Label Content="{Binding Audience.Number}"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Номер пары:"/>
+                <Label Content="{Binding LessonNumber}"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

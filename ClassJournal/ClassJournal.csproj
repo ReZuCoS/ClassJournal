@@ -88,16 +88,64 @@
     <Compile Include="ViewModels\ImageConverter.cs" />
     <Compile Include="ViewModels\StringValidator.cs" />
     <Compile Include="ViewModels\TextBoxValidator.cs" />
+    <Compile Include="Views\EntityCards\CardAttendance.xaml.cs">
+      <DependentUpon>CardAttendance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardDate.xaml.cs">
+      <DependentUpon>CardDate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EntityCards\CardEmployee.xaml.cs">
       <DependentUpon>CardEmployee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EntityCards\CardGroup.xaml.cs">
+      <DependentUpon>CardGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardLesson.xaml.cs">
+      <DependentUpon>CardLesson.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardPositionsEntity.xaml.cs">
+      <DependentUpon>CardPositionsEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardSpeciality.xaml.cs">
+      <DependentUpon>CardSpeciality.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardStudent.xaml.cs">
+      <DependentUpon>CardStudent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EntityCards\CardTeacher.xaml.cs">
       <DependentUpon>CardTeacher.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityCards\CardSubject.xaml.cs">
+      <DependentUpon>CardSubject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageAttendanceEntity.xaml.cs">
+      <DependentUpon>PageAttendanceEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageDayEntity.xaml.cs">
+      <DependentUpon>PageDayEntity.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EntityEditors\PageEmployeeEntity.xaml.cs">
       <DependentUpon>PageEmployeeEntity.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EntityEditors\PageEntity.cs" />
+    <Compile Include="Views\EntityEditors\PageGroupEntity.xaml.cs">
+      <DependentUpon>PageGroupEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageLessonEntity.xaml.cs">
+      <DependentUpon>PageLessonEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageSpecialityEntity.xaml.cs">
+      <DependentUpon>PageSpecialityEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageStudentEntity.xaml.cs">
+      <DependentUpon>PageStudentEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageSubjectEntity.xaml.cs">
+      <DependentUpon>PageSubjectEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EntityEditors\PageTeacherEntity.xaml.cs">
+      <DependentUpon>PageTeacherEntity.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EntityEditors\PageUserEntity.xaml.cs">
       <DependentUpon>PageUserEntity.xaml</DependentUpon>
     </Compile>
@@ -240,7 +288,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\EntityCards\CardAttendance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardDate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EntityCards\CardEmployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardLesson.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardPositionsEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardSpeciality.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityCards\CardStudent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -248,7 +324,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EntityCards\CardSubject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageAttendanceEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageDayEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EntityEditors\PageEmployeeEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageGroupEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageLessonEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageSpecialityEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageStudentEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageSubjectEntity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntityEditors\PageTeacherEntity.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

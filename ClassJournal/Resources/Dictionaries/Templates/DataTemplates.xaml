@@ -7,4 +7,25 @@
     <DataTemplate x:Key="employeeTemplate">
         <entityCards:CardEmployee/>
     </DataTemplate>
+    <DataTemplate x:Key="subjectTemplate">
+        <entityCards:CardSubject/>
+    </DataTemplate>
+    <DataTemplate x:Key="studentTemplate">
+        <entityCards:CardStudent/>
+    </DataTemplate>
+    <DataTemplate x:Key="specialityTemplate">
+        <entityCards:CardSpeciality/>
+    </DataTemplate>
+    <DataTemplate x:Key="groupTemplate">
+        <entityCards:CardGroup/>
+    </DataTemplate>
+    <DataTemplate x:Key="lessonTemplate">
+        <entityCards:CardLesson/>
+    </DataTemplate>
+    <DataTemplate x:Key="dateTemplate">
+        <entityCards:CardDate/>
+    </DataTemplate>
+    <DataTemplate x:Key="positionTemplate">
+        <entityCards:CardPositionsEntity/>
+    </DataTemplate>
 </ResourceDictionary>

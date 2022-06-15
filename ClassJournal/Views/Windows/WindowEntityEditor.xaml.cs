@@ -17,6 +17,8 @@ namespace ClassJournal.Views.Windows
             this.Title = page.Title;
             this.MinHeight = page.MinHeight + 100;
             this.MinWidth = page.MinWidth + 100;
+            this.Height = page.MinHeight + 70;
+            this.Width = page.MinWidth + 70;
             _currentEntityPage = page;
             frameMain.Content = _currentEntityPage;
         }
@@ -38,6 +40,20 @@ namespace ClassJournal.Views.Windows
             {
                 this.DialogResult = true;
             }    
+        }
+
+        private void RemoveEntity(object sender, RoutedEventArgs e)
+        {
+            if (!App.ConnectionService.IsConnected)
+            {
+                App.ShowErrorMessage("Проверьте подключение к сети!");
+                return;
+            }
+
+            if (_currentEntityPage.EntityRemoved())
+            {
+                this.DialogResult = true;
+            }
         }
 
         private async void CheckServiceStatus()

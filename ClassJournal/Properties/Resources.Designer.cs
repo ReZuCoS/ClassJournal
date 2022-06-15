@@ -61,7 +61,7 @@ namespace ClassJournal.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 192.168.0.10.
+        ///   Looks up a localized string similar to 92.243.165.101.
         /// </summary>
         internal static string ipAddress {
             get {
